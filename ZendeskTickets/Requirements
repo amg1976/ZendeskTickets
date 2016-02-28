@@ -1,0 +1,21 @@
+Requirements
+
+• Make Limited or no use of 3rd party libraries, Acceptable examples would be a Category for Base 64 encoding for NSData
+• At a minimum the following should be presented
+   • Subject
+   • Description
+   • Ticket Number
+   • Ticket Status
+• It is not required to build a login capability but should be resourced as a #define
+• Do not use Interface Builder in the form of Storyboards or Xib files
+• API Authentication can be done using Basic Auth
+
+Documentation
+
+http://developer.zendesk.com/documentation/rest_api/views.html#getting-tickets-from-a-view
+Test Data
+
+
+subdomain: mxtechtest
+id: 39551161
+email: acooke+techtest@zendesk.com  password: mobile

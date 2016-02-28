@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		209D4B2E1C8360C3005095EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B2D1C8360C3005095EC /* AppDelegate.swift */; };
-		209D4B301C8360C3005095EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B2F1C8360C3005095EC /* ViewController.swift */; };
-		209D4B331C8360C3005095EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B311C8360C3005095EC /* Main.storyboard */; };
-		209D4B351C8360C3005095EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B341C8360C3005095EC /* Assets.xcassets */; };
-		209D4B381C8360C3005095EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B361C8360C3005095EC /* LaunchScreen.storyboard */; };
+		209D4B401C836178005095EC /* Requirements in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B3F1C836178005095EC /* Requirements */; };
+		209D4B4C1C8361DE005095EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B421C8361DE005095EC /* Assets.xcassets */; };
+		209D4B4D1C8361DE005095EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B441C8361DE005095EC /* AppDelegate.swift */; };
+		209D4B4E1C8361DE005095EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B451C8361DE005095EC /* ViewController.swift */; };
+		209D4B4F1C8361DE005095EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B471C8361DE005095EC /* LaunchScreen.storyboard */; };
+		209D4B511C8361DE005095EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B4B1C8361DE005095EC /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		209D4B2A1C8360C3005095EC /* ZendeskTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZendeskTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		209D4B2D1C8360C3005095EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		209D4B2F1C8360C3005095EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		209D4B321C8360C3005095EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		209D4B341C8360C3005095EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		209D4B371C8360C3005095EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		209D4B391C8360C3005095EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		209D4B3F1C836178005095EC /* Requirements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Requirements; sourceTree = "<group>"; };
+		209D4B421C8361DE005095EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		209D4B441C8361DE005095EC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		209D4B451C8361DE005095EC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		209D4B481C8361DE005095EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		209D4B4B1C8361DE005095EC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +55,38 @@
 		209D4B2C1C8360C3005095EC /* ZendeskTickets */ = {
 			isa = PBXGroup;
 			children = (
-				209D4B2D1C8360C3005095EC /* AppDelegate.swift */,
-				209D4B2F1C8360C3005095EC /* ViewController.swift */,
-				209D4B311C8360C3005095EC /* Main.storyboard */,
-				209D4B341C8360C3005095EC /* Assets.xcassets */,
-				209D4B361C8360C3005095EC /* LaunchScreen.storyboard */,
-				209D4B391C8360C3005095EC /* Info.plist */,
+				209D4B411C8361DE005095EC /* Assets */,
+				209D4B431C8361DE005095EC /* Controllers */,
+				209D4B461C8361DE005095EC /* Support Files */,
+				209D4B3F1C836178005095EC /* Requirements */,
 			);
 			path = ZendeskTickets;
+			sourceTree = "<group>";
+		};
+		209D4B411C8361DE005095EC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				209D4B421C8361DE005095EC /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		209D4B431C8361DE005095EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				209D4B441C8361DE005095EC /* AppDelegate.swift */,
+				209D4B451C8361DE005095EC /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		209D4B461C8361DE005095EC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				209D4B471C8361DE005095EC /* LaunchScreen.storyboard */,
+				209D4B4B1C8361DE005095EC /* Info.plist */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +147,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209D4B381C8360C3005095EC /* LaunchScreen.storyboard in Resources */,
-				209D4B351C8360C3005095EC /* Assets.xcassets in Resources */,
-				209D4B331C8360C3005095EC /* Main.storyboard in Resources */,
+				209D4B4F1C8361DE005095EC /* LaunchScreen.storyboard in Resources */,
+				209D4B4C1C8361DE005095EC /* Assets.xcassets in Resources */,
+				209D4B401C836178005095EC /* Requirements in Resources */,
+				209D4B511C8361DE005095EC /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,26 +161,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209D4B301C8360C3005095EC /* ViewController.swift in Sources */,
-				209D4B2E1C8360C3005095EC /* AppDelegate.swift in Sources */,
+				209D4B4E1C8361DE005095EC /* ViewController.swift in Sources */,
+				209D4B4D1C8361DE005095EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		209D4B311C8360C3005095EC /* Main.storyboard */ = {
+		209D4B471C8361DE005095EC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				209D4B321C8360C3005095EC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		209D4B361C8360C3005095EC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				209D4B371C8360C3005095EC /* Base */,
+				209D4B481C8361DE005095EC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -249,7 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ZendeskTickets/Info.plist;
+				INFOPLIST_FILE = "ZendeskTickets/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amg.ZendeskTickets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -260,7 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ZendeskTickets/Info.plist;
+				INFOPLIST_FILE = "ZendeskTickets/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amg.ZendeskTickets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
