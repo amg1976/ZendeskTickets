@@ -14,7 +14,8 @@ class TicketListCellViewModelTests: XCTestCase {
    
       let ticket = Ticket(dictionary: ["subject":"This is a subject","description":"This is a description","id":1,"status":"new"])
       let cellViewModel = TicketsListCellViewModel(ticket: ticket!)
-      XCTAssertEqual(cellViewModel.description, ticket!.description)
+      XCTAssertEqual(cellViewModel.description.string, ticket!.description)
+      XCTAssertEqual(cellViewModel.numberAndStatus.string, "#1 - NEW")
       
    }
     
