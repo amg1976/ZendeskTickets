@@ -38,6 +38,7 @@ extension TicketsListViewController {
 class TicketsListViewController: UIViewController {
 
    private var collectionView: UICollectionView?
+   private var activityView: UIActivityIndicatorView?
    private var viewModel: TicketsListViewModel!
    private var apiService: ZendeskApiService!
    
@@ -60,16 +61,36 @@ class TicketsListViewController: UIViewController {
       view.translatesAutoresizingMaskIntoConstraints = false
       view.backgroundColor = viewModel.viewBackgroundColor
       
+      let activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+      activityView.translatesAutoresizingMaskIntoConstraints = false
+      activityView.hidesWhenStopped = true
+      view.addSubview(activityView)
+      view.addConstraint(NSLayoutConstraint(item: activityView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+      view.addConstraint(NSLayoutConstraint(item: activityView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+
       self.view = view
       self.collectionView = createCollectionView(view, viewModel: viewModel)
+      self.activityView = activityView
+      
    }
    
    override func viewWillAppear(animated: Bool) {
       super.viewWillAppear(animated)
-      viewModel.getTickets { (error) -> Void in
+      activityView?.startAnimating()
+      viewModel.getTickets { [unowned self] (error) -> Void in
          if error == nil {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
+               self.activityView?.stopAnimating()
                self.collectionView?.reloadData()
+            })
+         } else {
+            let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler: { [unowned self] (action) -> Void in
+               self.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+               self.activityView?.stopAnimating()
+               self.presentViewController(alert, animated: true, completion: nil)
             })
          }
       }
