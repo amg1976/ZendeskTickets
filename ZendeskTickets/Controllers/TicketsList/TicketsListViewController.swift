@@ -23,6 +23,12 @@ extension TicketsListViewController {
       superView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0)-[collection]-(0)-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
       superView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[layoutGuide]-(0)-[collection]-(0)-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
       
+      if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
+         collectionView.contentInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
+      } else {
+         collectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+      }
+      
       return collectionView
 
    }

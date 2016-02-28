@@ -26,20 +26,21 @@ class TicketsListCollectionViewCell: UICollectionViewCell {
 
       let subjectLabel = UILabel(frame: CGRect.zero)
       subjectLabel.translatesAutoresizingMaskIntoConstraints = false
+      subjectLabel.numberOfLines = 0
       contentView.addSubview(subjectLabel)
 
       let descriptionLabel = UILabel(frame: CGRect.zero)
       descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+      descriptionLabel.numberOfLines = 0
       contentView.addSubview(descriptionLabel)
       
-      let widthMargins = 2
+      let widthMargins = 4
       
       let dictViews = ["numberAndStatusLabel":numberAndStatusLabel,"subjectLabel":subjectLabel,"descriptionLabel":descriptionLabel]
-      contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(\(widthMargins))-[numberAndStatusLabel]-(\(widthMargins))-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
-      contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(\(widthMargins))-[subjectLabel]-(\(widthMargins))-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
+      contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(\(widthMargins))-[subjectLabel]-(\(widthMargins))-[numberAndStatusLabel]-(\(widthMargins))-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
       contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(\(widthMargins))-[descriptionLabel]-(\(widthMargins))-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
       contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(4)-[numberAndStatusLabel]", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
-      contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[numberAndStatusLabel]-(4)-[subjectLabel]", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
+      contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(4)-[subjectLabel]", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
       contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[subjectLabel]-(4)-[descriptionLabel]-(>=4)-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
       
       self.numberAndStatusLabel = numberAndStatusLabel
@@ -62,9 +63,9 @@ class TicketsListCollectionViewCell: UICollectionViewCell {
       subjectLabel?.textColor = cellModel.textColor
       descriptionLabel?.textColor = cellModel.textColor
       
-      numberAndStatusLabel?.text = cellModel.numberAndStatus
-      subjectLabel?.text = cellModel.subject
-      descriptionLabel?.text = cellModel.description
+      numberAndStatusLabel?.attributedText = cellModel.numberAndStatus
+      subjectLabel?.attributedText = cellModel.subject
+      descriptionLabel?.attributedText = cellModel.description
    }
    
 }
