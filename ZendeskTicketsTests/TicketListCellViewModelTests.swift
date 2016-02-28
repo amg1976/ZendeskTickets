@@ -12,7 +12,7 @@ class TicketListCellViewModelTests: XCTestCase {
   
    func testCanCreateCellViewModelFromTicket() {
    
-      let ticket = Ticket(dictionary: ["subject":"This is a subject","id":1,"status":"new"])
+      let ticket = Ticket(dictionary: ["subject":"This is a subject","description":"This is a description","id":1,"status":"new"])
       let cellViewModel = TicketsListCellViewModel(ticket: ticket!)
       XCTAssertEqual(cellViewModel.description, ticket!.description)
       

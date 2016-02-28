@@ -10,13 +10,13 @@ import UIKit
 
 extension TicketsListViewController {
    
-   private func createCollectionView(superView: UIView) -> UICollectionView {
+   private func createCollectionView(superView: UIView, viewModel: TicketsListViewModel) -> UICollectionView {
       
       let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: TicketsListViewCollectionFlowLayout())
       collectionView.registerClass(TicketsListCollectionViewCell.self, forCellWithReuseIdentifier: TicketsListCollectionViewCell.identifier)
       collectionView.dataSource = self
       collectionView.translatesAutoresizingMaskIntoConstraints = false
-      collectionView.backgroundColor = UIColor.clearColor()
+      collectionView.backgroundColor = viewModel.collectionViewBackgroundColor
       superView.addSubview(collectionView)
       
       let dictViews: [String:AnyObject] = ["collection":collectionView, "layoutGuide":self.topLayoutGuide]
@@ -33,9 +33,11 @@ class TicketsListViewController: UIViewController {
 
    private var collectionView: UICollectionView?
    private var viewModel: TicketsListViewModel!
+   private var apiService: ZendeskApiService!
    
-   init() {
-      self.viewModel = TicketsListViewModel(tickets: [ Ticket(dictionary: ["subject":"This is a subject","id":1,"status":"new"])! ])
+   init(apiService: ZendeskApiService) {
+      self.apiService = apiService
+      self.viewModel = TicketsListViewModel(apiService: apiService)
       super.init(nibName: nil, bundle: nil)
    }
 
@@ -48,14 +50,23 @@ class TicketsListViewController: UIViewController {
    }
    
    override func loadView() {
-      
       let view = UIView(frame: CGRect.zero)
       view.translatesAutoresizingMaskIntoConstraints = false
-      view.backgroundColor = UIColor.blueColor()
+      view.backgroundColor = viewModel.viewBackgroundColor
       
       self.view = view
-      self.collectionView = createCollectionView(view)
-      
+      self.collectionView = createCollectionView(view, viewModel: viewModel)
+   }
+   
+   override func viewWillAppear(animated: Bool) {
+      super.viewWillAppear(animated)
+      viewModel.getTickets { (error) -> Void in
+         if error == nil {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+               self.collectionView?.reloadData()
+            })
+         }
+      }
    }
    
    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {

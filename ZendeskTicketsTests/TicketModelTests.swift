@@ -12,7 +12,7 @@ class TicketModelTests: XCTestCase {
     
    func testCanCreateModelFromDictionary() {
    
-      let validDictionary = ["subject":"This is a subject","id":1,"status":"new"]
+      let validDictionary = ["subject":"This is a subject","description":"This is a description","id":1,"status":"new"]
       let validModel = Ticket(dictionary: validDictionary)
       XCTAssertNotNil(validModel)
       
@@ -20,7 +20,7 @@ class TicketModelTests: XCTestCase {
 
    func testCanCreateModelFromDictionaryWithExtraKeys() {
       
-      let validDictionary = ["subject":"This is also subject","id":2,"status":"new","otherKey":"otherValue"]
+      let validDictionary = ["subject":"This is a subject","description":"This is a description","id":1,"status":"new","otherKey":"otherValue"]
       let validModel = Ticket(dictionary: validDictionary)
       XCTAssertNotNil(validModel)
       
@@ -28,7 +28,7 @@ class TicketModelTests: XCTestCase {
 
    func testCannotCreateModelFromDictionaryWithMissingKeys() {
       
-      let validDictionary = ["subject":"This is also subject","status":"new","otherKey":"otherValue"]
+      let validDictionary = ["subject":"This is a subject","id":1,"status":"new","otherKey":"otherValue"]
       let validModel = Ticket(dictionary: validDictionary)
       XCTAssertNil(validModel)
       

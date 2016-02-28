@@ -33,18 +33,22 @@ class ZendeskApiService {
             do {
                let jsonObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! [String:AnyObject]
                if let tickets = jsonObject["tickets"] as? [[NSObject:AnyObject]] {
+                  print("apiService: got \(tickets.count) tickets from response")
                   var results = [Ticket]()
                   for ticketDictionary in tickets {
                      if let ticket = Ticket(dictionary: ticketDictionary) {
                         results.append(ticket)
                      }
                   }
+                  print("apiService: created \(results.count) tickets")
                   onCompletion(tickets: results, error: nil)
                }
             } catch {
+               print("apiService: error parsing json")
                onCompletion(tickets: nil, error: NSError(domain: "json", code: 1000, userInfo: [NSLocalizedDescriptionKey : "Error parsing json"]))
             }
          } else {
+            print("apiService: error: \(error?.localizedDescription)")
             onCompletion(tickets: nil, error: error)
          }
       }

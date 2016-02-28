@@ -6,24 +6,37 @@
 //  Copyright © 2016 Adriano Goncalves. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
 
 class TicketsListViewModel {
    
-   private var tickets: [Ticket]
+   private var apiService: ZendeskApiService
+   private var tickets: [Ticket] = []
    private var cellViewModels: [TicketsListCellViewModel] = []
-   var cellIdentifier: String { return TicketsListCollectionViewCell.identifier }
-   
+
    let collectionViewNumberOfSections: Int = 1
+
+   var cellIdentifier: String { return TicketsListCollectionViewCell.identifier }
+   var viewBackgroundColor: UIColor { return UIColor.whiteColor() }
+   var collectionViewBackgroundColor: UIColor { return UIColor.clearColor() }
    
-   init(tickets: [Ticket]) {
-      self.tickets = tickets
-      self.cellViewModels = convertTicketsToCellViewModel(tickets)
+   init(apiService: ZendeskApiService) {
+      self.apiService = apiService
    }
-   
+
+   func getTickets(onCompletion: (NSError? -> Void)) {
+      apiService.getTickets { [unowned self] (tickets, error) -> Void in
+         if let tickets = tickets {
+            self.cellViewModels = self.convertTicketsToCellViewModel(tickets)
+            onCompletion(nil)
+         } else {
+            onCompletion(error)
+         }
+      }
+   }
+
    func collectionViewNumberOfItems(section: Int) -> Int {
-      return tickets.count
+      return cellViewModels.count
    }
    
    func cellViewModelAt(indexPath: NSIndexPath) -> TicketsListCellViewModel? {
@@ -31,9 +44,12 @@ class TicketsListViewModel {
       
       return cellViewModels[indexPath.item]
    }
-   
+}
+
+extension TicketsListViewModel {
+
    internal func convertTicketsToCellViewModel(tickets: [Ticket]) -> [TicketsListCellViewModel] {
       return tickets.map { return TicketsListCellViewModel(ticket: $0) }
    }
-   
+
 }

@@ -12,7 +12,7 @@ class TicketsListViewCollectionFlowLayout: UICollectionViewFlowLayout {
    
    override var itemSize: CGSize {
       set {}
-      get { return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad ? CGSize(width: 200, height: 100) : CGSize(width: UIScreen.mainScreen().bounds.width, height: 50) }
+      get { return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad ? CGSize(width: 200, height: 200) : CGSize(width: UIScreen.mainScreen().bounds.width-16, height: 100) }
    }
    
 }

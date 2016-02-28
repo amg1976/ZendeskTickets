@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
       if let window = self.window {
 
-         let vc = TicketsListViewController()
+         let vc = TicketsListViewController(apiService: ZendeskApiService())
          window.rootViewController = vc
 
          window.backgroundColor = UIColor.redColor()
