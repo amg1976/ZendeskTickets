@@ -8,18 +8,43 @@
 
 import UIKit
 
+extension TicketsListViewController {
+   
+   private func createCollectionView(superView: UIView) -> UICollectionView {
+      
+      let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: TicketsListViewCollectionFlowLayout())
+      collectionView.registerClass(TicketsListCollectionViewCell.self, forCellWithReuseIdentifier: TicketsListCollectionViewCell.identifier)
+      collectionView.dataSource = self
+      collectionView.translatesAutoresizingMaskIntoConstraints = false
+      collectionView.backgroundColor = UIColor.clearColor()
+      superView.addSubview(collectionView)
+      
+      let dictViews: [String:AnyObject] = ["collection":collectionView, "layoutGuide":self.topLayoutGuide]
+      superView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0)-[collection]-(0)-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
+      superView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[layoutGuide]-(0)-[collection]-(0)-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
+      
+      return collectionView
+
+   }
+   
+}
+
 class TicketsListViewController: UIViewController {
 
    private var collectionView: UICollectionView?
    private var viewModel: TicketsListViewModel!
    
    init() {
-      self.viewModel = TicketsListViewModel(tickets: [])
+      self.viewModel = TicketsListViewModel(tickets: [ Ticket(dictionary: ["subject":"This is a subject","id":1,"status":"new"])! ])
       super.init(nibName: nil, bundle: nil)
    }
 
    required init?(coder aDecoder: NSCoder) {
        fatalError("init(coder:) has not been implemented")
+   }
+   
+   override func prefersStatusBarHidden() -> Bool {
+      return false
    }
    
    override func loadView() {
@@ -28,19 +53,16 @@ class TicketsListViewController: UIViewController {
       view.translatesAutoresizingMaskIntoConstraints = false
       view.backgroundColor = UIColor.blueColor()
       
-      let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: TicketsListViewCollectionFlowLayout())
-      collectionView.translatesAutoresizingMaskIntoConstraints = false
-      collectionView.backgroundColor = UIColor.clearColor()
-      view.addSubview(collectionView)
-      
-      let dictViews = ["collection":collectionView]
-      view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(0)-[collection]-(0)-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
-      view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(0)-[collection]-(0)-|", options: NSLayoutFormatOptions([]), metrics: nil, views: dictViews))
-      
       self.view = view
-      self.collectionView = collectionView
+      self.collectionView = createCollectionView(view)
       
    }
+   
+   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+      super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+      collectionView?.reloadData()
+   }
+   
 }
 
 extension TicketsListViewController: UICollectionViewDataSource {

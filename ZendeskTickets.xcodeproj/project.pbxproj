@@ -20,6 +20,9 @@
 		201DB6671C836CBB002A8B9F /* TicketsListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6651C836CBB002A8B9F /* TicketsListCollectionViewCell.swift */; };
 		201DB6691C836EAB002A8B9F /* TicketsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6681C836EAB002A8B9F /* TicketsListCellViewModel.swift */; };
 		201DB66A1C836EAB002A8B9F /* TicketsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6681C836EAB002A8B9F /* TicketsListCellViewModel.swift */; };
+		201DB66C1C836FF3002A8B9F /* TicketModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB66B1C836FF3002A8B9F /* TicketModelTests.swift */; };
+		201DB66E1C83714A002A8B9F /* TicketsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB66D1C83714A002A8B9F /* TicketsListViewModelTests.swift */; };
+		201DB6701C83730B002A8B9F /* TicketListCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB66F1C83730B002A8B9F /* TicketListCellViewModelTests.swift */; };
 		209D4B401C836178005095EC /* Requirements in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B3F1C836178005095EC /* Requirements */; };
 		209D4B4C1C8361DE005095EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B421C8361DE005095EC /* Assets.xcassets */; };
 		209D4B4D1C8361DE005095EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B441C8361DE005095EC /* AppDelegate.swift */; };
@@ -45,6 +48,9 @@
 		201DB6621C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListCollectionFlowLayout.swift; sourceTree = "<group>"; };
 		201DB6651C836CBB002A8B9F /* TicketsListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListCollectionViewCell.swift; sourceTree = "<group>"; };
 		201DB6681C836EAB002A8B9F /* TicketsListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListCellViewModel.swift; sourceTree = "<group>"; };
+		201DB66B1C836FF3002A8B9F /* TicketModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketModelTests.swift; sourceTree = "<group>"; };
+		201DB66D1C83714A002A8B9F /* TicketsListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListViewModelTests.swift; sourceTree = "<group>"; };
+		201DB66F1C83730B002A8B9F /* TicketListCellViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketListCellViewModelTests.swift; sourceTree = "<group>"; };
 		209D4B2A1C8360C3005095EC /* ZendeskTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZendeskTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		209D4B3F1C836178005095EC /* Requirements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Requirements; sourceTree = "<group>"; };
 		209D4B421C8361DE005095EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,8 +185,11 @@
 		209D4B5D1C836454005095EC /* ZendeskTicketsTests */ = {
 			isa = PBXGroup;
 			children = (
-				209D4B5E1C836454005095EC /* NetworkServiceTests.swift */,
 				209D4B601C836454005095EC /* Info.plist */,
+				209D4B5E1C836454005095EC /* NetworkServiceTests.swift */,
+				201DB66B1C836FF3002A8B9F /* TicketModelTests.swift */,
+				201DB66D1C83714A002A8B9F /* TicketsListViewModelTests.swift */,
+				201DB66F1C83730B002A8B9F /* TicketListCellViewModelTests.swift */,
 			);
 			path = ZendeskTicketsTests;
 			sourceTree = "<group>";
@@ -301,6 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201DB66E1C83714A002A8B9F /* TicketsListViewModelTests.swift in Sources */,
+				201DB66C1C836FF3002A8B9F /* TicketModelTests.swift in Sources */,
 				201DB66A1C836EAB002A8B9F /* TicketsListCellViewModel.swift in Sources */,
 				201DB65C1C836BC5002A8B9F /* TicketsListViewModel.swift in Sources */,
 				201DB6641C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift in Sources */,
@@ -309,6 +320,7 @@
 				201DB6671C836CBB002A8B9F /* TicketsListCollectionViewCell.swift in Sources */,
 				201DB6611C836C72002A8B9F /* TicketsListViewController.swift in Sources */,
 				209D4B5F1C836454005095EC /* NetworkServiceTests.swift in Sources */,
+				201DB6701C83730B002A8B9F /* TicketListCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,8 +6,17 @@
 //  Copyright © 2016 Adriano Goncalves. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class TicketsListCellViewModel {
+   
+   private var ticket: Ticket
+   
+   var description: String { return ticket.description }
+   var backgroundColor: UIColor { return UIColor.orangeColor() }
+   
+   init(ticket: Ticket) {
+      self.ticket = ticket
+   }
    
 }

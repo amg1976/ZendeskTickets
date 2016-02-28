@@ -12,14 +12,14 @@ import Foundation
 class TicketsListViewModel {
    
    private var tickets: [Ticket]
-   private var cellViewModels: [TicketsListCellViewModel]
+   private var cellViewModels: [TicketsListCellViewModel] = []
    var cellIdentifier: String { return TicketsListCollectionViewCell.identifier }
    
    let collectionViewNumberOfSections: Int = 1
    
    init(tickets: [Ticket]) {
       self.tickets = tickets
-      self.cellViewModels = []
+      self.cellViewModels = convertTicketsToCellViewModel(tickets)
    }
    
    func collectionViewNumberOfItems(section: Int) -> Int {
@@ -30,6 +30,10 @@ class TicketsListViewModel {
       guard cellViewModels.count > indexPath.item else { return nil }
       
       return cellViewModels[indexPath.item]
+   }
+   
+   internal func convertTicketsToCellViewModel(tickets: [Ticket]) -> [TicketsListCellViewModel] {
+      return tickets.map { return TicketsListCellViewModel(ticket: $0) }
    }
    
 }
