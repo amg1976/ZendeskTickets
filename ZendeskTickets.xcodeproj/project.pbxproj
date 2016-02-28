@@ -10,10 +10,19 @@
 		201DB6531C8365A7002A8B9F /* ZendeskApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B531C836361005095EC /* ZendeskApiService.swift */; };
 		201DB6581C83682A002A8B9F /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6561C83682A002A8B9F /* Ticket.swift */; };
 		201DB6591C83682A002A8B9F /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6561C83682A002A8B9F /* Ticket.swift */; };
+		201DB65B1C836BC5002A8B9F /* TicketsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB65A1C836BC5002A8B9F /* TicketsListViewModel.swift */; };
+		201DB65C1C836BC5002A8B9F /* TicketsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB65A1C836BC5002A8B9F /* TicketsListViewModel.swift */; };
+		201DB6601C836C72002A8B9F /* TicketsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB65F1C836C72002A8B9F /* TicketsListViewController.swift */; };
+		201DB6611C836C72002A8B9F /* TicketsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB65F1C836C72002A8B9F /* TicketsListViewController.swift */; };
+		201DB6631C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6621C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift */; };
+		201DB6641C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6621C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift */; };
+		201DB6661C836CBB002A8B9F /* TicketsListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6651C836CBB002A8B9F /* TicketsListCollectionViewCell.swift */; };
+		201DB6671C836CBB002A8B9F /* TicketsListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6651C836CBB002A8B9F /* TicketsListCollectionViewCell.swift */; };
+		201DB6691C836EAB002A8B9F /* TicketsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6681C836EAB002A8B9F /* TicketsListCellViewModel.swift */; };
+		201DB66A1C836EAB002A8B9F /* TicketsListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6681C836EAB002A8B9F /* TicketsListCellViewModel.swift */; };
 		209D4B401C836178005095EC /* Requirements in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B3F1C836178005095EC /* Requirements */; };
 		209D4B4C1C8361DE005095EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B421C8361DE005095EC /* Assets.xcassets */; };
 		209D4B4D1C8361DE005095EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B441C8361DE005095EC /* AppDelegate.swift */; };
-		209D4B4E1C8361DE005095EC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B451C8361DE005095EC /* ListViewController.swift */; };
 		209D4B4F1C8361DE005095EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B471C8361DE005095EC /* LaunchScreen.storyboard */; };
 		209D4B541C836361005095EC /* ZendeskApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B531C836361005095EC /* ZendeskApiService.swift */; };
 		209D4B5F1C836454005095EC /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B5E1C836454005095EC /* NetworkServiceTests.swift */; };
@@ -31,11 +40,15 @@
 
 /* Begin PBXFileReference section */
 		201DB6561C83682A002A8B9F /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		201DB65A1C836BC5002A8B9F /* TicketsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListViewModel.swift; sourceTree = "<group>"; };
+		201DB65F1C836C72002A8B9F /* TicketsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListViewController.swift; sourceTree = "<group>"; };
+		201DB6621C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListCollectionFlowLayout.swift; sourceTree = "<group>"; };
+		201DB6651C836CBB002A8B9F /* TicketsListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListCollectionViewCell.swift; sourceTree = "<group>"; };
+		201DB6681C836EAB002A8B9F /* TicketsListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketsListCellViewModel.swift; sourceTree = "<group>"; };
 		209D4B2A1C8360C3005095EC /* ZendeskTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZendeskTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		209D4B3F1C836178005095EC /* Requirements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Requirements; sourceTree = "<group>"; };
 		209D4B421C8361DE005095EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		209D4B441C8361DE005095EC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		209D4B451C8361DE005095EC /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		209D4B481C8361DE005095EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		209D4B4B1C8361DE005095EC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		209D4B531C836361005095EC /* ZendeskApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZendeskApiService.swift; sourceTree = "<group>"; };
@@ -73,8 +86,28 @@
 		201DB6571C83682A002A8B9F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				201DB65A1C836BC5002A8B9F /* TicketsListViewModel.swift */,
+				201DB6681C836EAB002A8B9F /* TicketsListCellViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		201DB65D1C836C72002A8B9F /* TicketsList */ = {
+			isa = PBXGroup;
+			children = (
+				201DB65E1C836C72002A8B9F /* CollectionView */,
+				201DB65F1C836C72002A8B9F /* TicketsListViewController.swift */,
+			);
+			path = TicketsList;
+			sourceTree = "<group>";
+		};
+		201DB65E1C836C72002A8B9F /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				201DB6621C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift */,
+				201DB6651C836CBB002A8B9F /* TicketsListCollectionViewCell.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		209D4B211C8360C3005095EC = {
@@ -120,8 +153,8 @@
 		209D4B431C8361DE005095EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				201DB65D1C836C72002A8B9F /* TicketsList */,
 				209D4B441C8361DE005095EC /* AppDelegate.swift */,
-				209D4B451C8361DE005095EC /* ListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,10 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209D4B4E1C8361DE005095EC /* ListViewController.swift in Sources */,
+				201DB6691C836EAB002A8B9F /* TicketsListCellViewModel.swift in Sources */,
 				209D4B541C836361005095EC /* ZendeskApiService.swift in Sources */,
+				201DB6631C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift in Sources */,
+				201DB6601C836C72002A8B9F /* TicketsListViewController.swift in Sources */,
 				209D4B4D1C8361DE005095EC /* AppDelegate.swift in Sources */,
+				201DB6661C836CBB002A8B9F /* TicketsListCollectionViewCell.swift in Sources */,
 				201DB6581C83682A002A8B9F /* Ticket.swift in Sources */,
+				201DB65B1C836BC5002A8B9F /* TicketsListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201DB66A1C836EAB002A8B9F /* TicketsListCellViewModel.swift in Sources */,
+				201DB65C1C836BC5002A8B9F /* TicketsListViewModel.swift in Sources */,
+				201DB6641C836C94002A8B9F /* TicketsListCollectionFlowLayout.swift in Sources */,
 				201DB6531C8365A7002A8B9F /* ZendeskApiService.swift in Sources */,
 				201DB6591C83682A002A8B9F /* Ticket.swift in Sources */,
+				201DB6671C836CBB002A8B9F /* TicketsListCollectionViewCell.swift in Sources */,
+				201DB6611C836C72002A8B9F /* TicketsListViewController.swift in Sources */,
 				209D4B5F1C836454005095EC /* NetworkServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

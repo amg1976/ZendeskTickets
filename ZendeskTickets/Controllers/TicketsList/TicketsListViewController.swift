@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TicketsListViewController.swift
 //  ZendeskTickets
 //
 //  Created by Adriano Goncalves on 28/02/2016.
@@ -8,18 +8,19 @@
 
 import UIKit
 
-class ListViewControllerFlowLayout: UICollectionViewFlowLayout {
-
-   override var itemSize: CGSize {
-      set {}
-      get { return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad ? CGSize(width: 200, height: 100) : CGSize(width: UIScreen.mainScreen().bounds.width, height: 50) }
-   }
-
-}
-
-class ListViewController: UIViewController {
+class TicketsListViewController: UIViewController {
 
    private var collectionView: UICollectionView?
+   private var viewModel: TicketsListViewModel!
+   
+   init() {
+      self.viewModel = TicketsListViewModel(tickets: [])
+      super.init(nibName: nil, bundle: nil)
+   }
+
+   required init?(coder aDecoder: NSCoder) {
+       fatalError("init(coder:) has not been implemented")
+   }
    
    override func loadView() {
       
@@ -27,7 +28,7 @@ class ListViewController: UIViewController {
       view.translatesAutoresizingMaskIntoConstraints = false
       view.backgroundColor = UIColor.blueColor()
       
-      let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: ListViewControllerFlowLayout())
+      let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: TicketsListViewCollectionFlowLayout())
       collectionView.translatesAutoresizingMaskIntoConstraints = false
       collectionView.backgroundColor = UIColor.clearColor()
       view.addSubview(collectionView)
@@ -42,18 +43,21 @@ class ListViewController: UIViewController {
    }
 }
 
-extension ListViewController: UICollectionViewDataSource {
+extension TicketsListViewController: UICollectionViewDataSource {
 
    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-      return 1
+      return viewModel.collectionViewNumberOfSections
    }
    
    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return 0
+      return viewModel.collectionViewNumberOfItems(section)
    }
    
    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCellWithReuseIdentifier("", forIndexPath: indexPath)
+      let cell = collectionView.dequeueReusableCellWithReuseIdentifier(viewModel.cellIdentifier, forIndexPath: indexPath) as! TicketsListCollectionViewCell
+      if let model = viewModel.cellViewModelAt(indexPath) {
+         cell.update(model)
+      }
       return cell
    }
 
