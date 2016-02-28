@@ -1,3 +1,12 @@
+
+Goal
+
+Demonstrate an ability to develop a simple and elegant solution to the following problem.
+The goal is to build a single screen application that can fetch data from a web service, deserialise the information and present it in a list.
+
+During the face to face interview, we will review the work so far and then do pairing session where we will extend the functionality of the project.
+Please try and limit your implementation to ~2 hours.
+
 Requirements
 
 • Make Limited or no use of 3rd party libraries, Acceptable examples would be a Category for Base 64 encoding for NSData

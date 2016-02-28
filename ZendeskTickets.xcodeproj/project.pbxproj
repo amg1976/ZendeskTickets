@@ -7,22 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201DB6531C8365A7002A8B9F /* ZendeskApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B531C836361005095EC /* ZendeskApiService.swift */; };
+		201DB6581C83682A002A8B9F /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6561C83682A002A8B9F /* Ticket.swift */; };
+		201DB6591C83682A002A8B9F /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201DB6561C83682A002A8B9F /* Ticket.swift */; };
 		209D4B401C836178005095EC /* Requirements in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B3F1C836178005095EC /* Requirements */; };
 		209D4B4C1C8361DE005095EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B421C8361DE005095EC /* Assets.xcassets */; };
 		209D4B4D1C8361DE005095EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B441C8361DE005095EC /* AppDelegate.swift */; };
-		209D4B4E1C8361DE005095EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B451C8361DE005095EC /* ViewController.swift */; };
+		209D4B4E1C8361DE005095EC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B451C8361DE005095EC /* ListViewController.swift */; };
 		209D4B4F1C8361DE005095EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B471C8361DE005095EC /* LaunchScreen.storyboard */; };
-		209D4B511C8361DE005095EC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209D4B4B1C8361DE005095EC /* Info.plist */; };
+		209D4B541C836361005095EC /* ZendeskApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B531C836361005095EC /* ZendeskApiService.swift */; };
+		209D4B5F1C836454005095EC /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D4B5E1C836454005095EC /* NetworkServiceTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		209D4B611C836454005095EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 209D4B221C8360C3005095EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 209D4B291C8360C3005095EC;
+			remoteInfo = ZendeskTickets;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		201DB6561C83682A002A8B9F /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		209D4B2A1C8360C3005095EC /* ZendeskTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZendeskTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		209D4B3F1C836178005095EC /* Requirements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Requirements; sourceTree = "<group>"; };
 		209D4B421C8361DE005095EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		209D4B441C8361DE005095EC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		209D4B451C8361DE005095EC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		209D4B451C8361DE005095EC /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		209D4B481C8361DE005095EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		209D4B4B1C8361DE005095EC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		209D4B531C836361005095EC /* ZendeskApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZendeskApiService.swift; sourceTree = "<group>"; };
+		209D4B5C1C836454005095EC /* ZendeskTicketsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZendeskTicketsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		209D4B5E1C836454005095EC /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		209D4B601C836454005095EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,13 +52,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		209D4B591C836454005095EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201DB6551C83682A002A8B9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				201DB6561C83682A002A8B9F /* Ticket.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		201DB6571C83682A002A8B9F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		209D4B211C8360C3005095EC = {
 			isa = PBXGroup;
 			children = (
 				209D4B2C1C8360C3005095EC /* ZendeskTickets */,
+				209D4B5D1C836454005095EC /* ZendeskTicketsTests */,
 				209D4B2B1C8360C3005095EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				209D4B2A1C8360C3005095EC /* ZendeskTickets.app */,
+				209D4B5C1C836454005095EC /* ZendeskTicketsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,10 +98,13 @@
 		209D4B2C1C8360C3005095EC /* ZendeskTickets */ = {
 			isa = PBXGroup;
 			children = (
+				209D4B3F1C836178005095EC /* Requirements */,
 				209D4B411C8361DE005095EC /* Assets */,
 				209D4B431C8361DE005095EC /* Controllers */,
+				201DB6551C83682A002A8B9F /* Models */,
+				209D4B521C836355005095EC /* Services */,
 				209D4B461C8361DE005095EC /* Support Files */,
-				209D4B3F1C836178005095EC /* Requirements */,
+				201DB6571C83682A002A8B9F /* ViewModels */,
 			);
 			path = ZendeskTickets;
 			sourceTree = "<group>";
@@ -75,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				209D4B441C8361DE005095EC /* AppDelegate.swift */,
-				209D4B451C8361DE005095EC /* ViewController.swift */,
+				209D4B451C8361DE005095EC /* ListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +133,23 @@
 				209D4B4B1C8361DE005095EC /* Info.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		209D4B521C836355005095EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				209D4B531C836361005095EC /* ZendeskApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		209D4B5D1C836454005095EC /* ZendeskTicketsTests */ = {
+			isa = PBXGroup;
+			children = (
+				209D4B5E1C836454005095EC /* NetworkServiceTests.swift */,
+				209D4B601C836454005095EC /* Info.plist */,
+			);
+			path = ZendeskTicketsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +172,24 @@
 			productReference = 209D4B2A1C8360C3005095EC /* ZendeskTickets.app */;
 			productType = "com.apple.product-type.application";
 		};
+		209D4B5B1C836454005095EC /* ZendeskTicketsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 209D4B631C836454005095EC /* Build configuration list for PBXNativeTarget "ZendeskTicketsTests" */;
+			buildPhases = (
+				209D4B581C836454005095EC /* Sources */,
+				209D4B591C836454005095EC /* Frameworks */,
+				209D4B5A1C836454005095EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				209D4B621C836454005095EC /* PBXTargetDependency */,
+			);
+			name = ZendeskTicketsTests;
+			productName = ZendeskTicketsTests;
+			productReference = 209D4B5C1C836454005095EC /* ZendeskTicketsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -121,6 +202,10 @@
 				TargetAttributes = {
 					209D4B291C8360C3005095EC = {
 						CreatedOnToolsVersion = 7.1;
+					};
+					209D4B5B1C836454005095EC = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 209D4B291C8360C3005095EC;
 					};
 				};
 			};
@@ -138,6 +223,7 @@
 			projectRoot = "";
 			targets = (
 				209D4B291C8360C3005095EC /* ZendeskTickets */,
+				209D4B5B1C836454005095EC /* ZendeskTicketsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -150,7 +236,13 @@
 				209D4B4F1C8361DE005095EC /* LaunchScreen.storyboard in Resources */,
 				209D4B4C1C8361DE005095EC /* Assets.xcassets in Resources */,
 				209D4B401C836178005095EC /* Requirements in Resources */,
-				209D4B511C8361DE005095EC /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		209D4B5A1C836454005095EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,12 +253,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209D4B4E1C8361DE005095EC /* ViewController.swift in Sources */,
+				209D4B4E1C8361DE005095EC /* ListViewController.swift in Sources */,
+				209D4B541C836361005095EC /* ZendeskApiService.swift in Sources */,
 				209D4B4D1C8361DE005095EC /* AppDelegate.swift in Sources */,
+				201DB6581C83682A002A8B9F /* Ticket.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		209D4B581C836454005095EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201DB6531C8365A7002A8B9F /* ZendeskApiService.swift in Sources */,
+				201DB6591C83682A002A8B9F /* Ticket.swift in Sources */,
+				209D4B5F1C836454005095EC /* NetworkServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		209D4B621C836454005095EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 209D4B291C8360C3005095EC /* ZendeskTickets */;
+			targetProxy = 209D4B611C836454005095EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		209D4B471C8361DE005095EC /* LaunchScreen.storyboard */ = {
@@ -285,6 +397,30 @@
 			};
 			name = Release;
 		};
+		209D4B641C836454005095EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZendeskTicketsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amg.ZendeskTicketsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZendeskTickets.app/ZendeskTickets";
+			};
+			name = Debug;
+		};
+		209D4B651C836454005095EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZendeskTicketsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amg.ZendeskTicketsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZendeskTickets.app/ZendeskTickets";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -304,6 +440,16 @@
 				209D4B3E1C8360C3005095EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		209D4B631C836454005095EC /* Build configuration list for PBXNativeTarget "ZendeskTicketsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				209D4B641C836454005095EC /* Debug */,
+				209D4B651C836454005095EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

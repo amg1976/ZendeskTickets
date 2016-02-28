@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
       if let window = self.window {
 
-         let vc = ViewController()
+         let vc = ListViewController()
          window.rootViewController = vc
 
          window.backgroundColor = UIColor.redColor()
