@@ -9,14 +9,14 @@
 import XCTest
 
 class TicketsListViewModelTests: XCTestCase {
-   
-   func testCanConvertTicketsToCellViewModels() {
-      
-      let tickets: [Ticket] = []
-      let viewModel = TicketsListViewModel(apiService: ZendeskApiService())
-      let cellViewModels = viewModel.convertTicketsToCellViewModel(tickets)
-      XCTAssertEqual(tickets.count, cellViewModels.count)
-      
-   }
-   
+    
+    func testCanConvertTicketsToCellViewModels() {
+        
+        let tickets: [Ticket] = []
+        let viewModel = TicketsListViewModel(apiService: ZendeskApiService())
+        let cellViewModels = viewModel.convertTicketsToCellViewModel(tickets)
+        XCTAssertEqual(tickets.count, cellViewModels.count)
+        
+    }
+    
 }

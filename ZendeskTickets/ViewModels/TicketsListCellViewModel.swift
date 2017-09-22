@@ -8,28 +8,28 @@
 
 import UIKit
 
-class TicketsListCellViewModel {
-   
-   private var ticket: Ticket
-   
-   var subject: NSAttributedString
-   var description: NSAttributedString
-   var numberAndStatus: NSAttributedString
-
-   var backgroundColor: UIColor { return UIColor(red: 120/255, green: 163/255, blue: 0, alpha: 1) }
-   var textColor: UIColor { return UIColor.whiteColor() }
-   
-   init(ticket: Ticket) {
-      self.ticket = ticket
-      
-      let paragraph = NSMutableParagraphStyle()
-      paragraph.alignment = NSTextAlignment.Right
-      self.numberAndStatus = NSAttributedString(string: "#\(ticket.number) - \(ticket.status.rawValue.uppercaseString)", attributes: [NSParagraphStyleAttributeName:paragraph])
-      
-      self.subject = NSAttributedString(string: ticket.subject, attributes: [NSFontAttributeName:UIFont.systemFontOfSize(20, weight: UIFontWeightBold)])
-
-      self.description = NSAttributedString(string: ticket.description, attributes: [NSFontAttributeName:UIFont.systemFontOfSize(20, weight: UIFontWeightRegular)])
-
-   }
-   
+struct TicketsListCellViewModel {
+    
+    private var ticket: Ticket
+    
+    var subject: NSAttributedString
+    var description: NSAttributedString
+    var numberAndStatus: NSAttributedString
+    
+    var backgroundColor: UIColor { return UIColor(red: 120/255, green: 163/255, blue: 0, alpha: 1) }
+    var textColor: UIColor { return .white }
+    
+    init(ticket: Ticket) {
+        self.ticket = ticket
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = NSTextAlignment.right
+        self.numberAndStatus = NSAttributedString(string: "#\(ticket.number) - \(ticket.status.rawValue.uppercased())", attributes: [NSAttributedStringKey.paragraphStyle:paragraph])
+        
+        self.subject = NSAttributedString(string: ticket.subject, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)])
+        
+        self.description = NSAttributedString(string: ticket.description, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)])
+        
+    }
+    
 }

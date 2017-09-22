@@ -10,23 +10,23 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-   var window: UIWindow?
-
-   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-      self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-      if let window = self.window {
-
-         let vc = TicketsListViewController(apiService: ZendeskApiService())
-         window.rootViewController = vc
-
-         window.backgroundColor = UIColor.redColor()
-         window.makeKeyAndVisible()
-      }
-      
-      return true
-   }
-
+    
+    var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        if let window = self.window {
+            
+            let vc = TicketsListViewController(apiService: ZendeskApiService())
+            window.rootViewController = vc
+            
+            window.backgroundColor = UIColor.red
+            window.makeKeyAndVisible()
+        }
+        
+        return true
+    }
+    
 }
 

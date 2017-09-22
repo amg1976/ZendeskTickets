@@ -9,10 +9,10 @@
 import UIKit
 
 class TicketsListViewCollectionFlowLayout: UICollectionViewFlowLayout {
-   
-   override var itemSize: CGSize {
-      set {}
-      get { return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad ? CGSize(width: 320, height: 200) : CGSize(width: UIScreen.mainScreen().bounds.width-16, height: 100) }
-   }
-
+    
+    override var itemSize: CGSize {
+        set {}
+        get { return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad ? CGSize(width: 320, height: 200) : CGSize(width: UIScreen.main.bounds.width-16, height: 100) }
+    }
+    
 }

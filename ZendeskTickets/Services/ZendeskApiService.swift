@@ -8,51 +8,51 @@
 
 import Foundation
 
-typealias ServiceResult = (tickets: [Ticket]?, error: NSError?) -> Void
+typealias ServiceResult = (_ tickets: [Ticket]?, _ error: NSError?) -> Void
 
 class ZendeskApiService {
-   
-   private var urlSession: NSURLSession
-   
-   init(session: NSURLSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())) {
-      urlSession = session
-   }
-   
-   func getTickets(onCompletion: ServiceResult) {
-      let urlRequest = NSMutableURLRequest(URL: NSURL(string: "https://mxtechtest.zendesk.com/api/v2/views/39551161/tickets.json")!)
-      
-      let username = "acooke+techtest@zendesk.com"
-      let password = "mobile"
-      let loginString = NSString(format: "%@:%@", username, password)
-      let loginData: NSData = loginString.dataUsingEncoding(NSUTF8StringEncoding)!
-      let base64LoginString = loginData.base64EncodedStringWithOptions([])
-      
-      urlRequest.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-      let task = urlSession.dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
-         if let data = data {
-            do {
-               let jsonObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! [String:AnyObject]
-               if let tickets = jsonObject["tickets"] as? [[NSObject:AnyObject]] {
-                  print("apiService: got \(tickets.count) tickets from response")
-                  var results = [Ticket]()
-                  for ticketDictionary in tickets {
-                     if let ticket = Ticket(dictionary: ticketDictionary) {
-                        results.append(ticket)
-                     }
-                  }
-                  print("apiService: created \(results.count) tickets")
-                  onCompletion(tickets: results, error: nil)
-               }
-            } catch {
-               print("apiService: error parsing json")
-               onCompletion(tickets: nil, error: NSError(domain: "json", code: 1000, userInfo: [NSLocalizedDescriptionKey : "Error parsing json"]))
+    
+    fileprivate var urlSession: URLSession
+    
+    init(session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
+        urlSession = session
+    }
+    
+    func getTickets(_ onCompletion: @escaping ServiceResult) {
+        let urlRequest = NSMutableURLRequest(url: URL(string: "https://mxtechtest.zendesk.com/api/v2/views/39551161/tickets.json")!)
+        
+        let username = "acooke+techtest@zendesk.com"
+        let password = "mobile"
+        let loginString = NSString(format: "%@:%@", username, password)
+        let loginData: Data = loginString.data(using: String.Encoding.utf8.rawValue)!
+        let base64LoginString = loginData.base64EncodedString(options: [])
+        
+        urlRequest.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+        let task = urlSession.dataTask(with: urlRequest as URLRequest) { (data, response, error) in
+            if let data = data {
+                do {
+                    let jsonObject = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:AnyObject]
+                    if let tickets = jsonObject["tickets"] as? [[AnyHashable: Any]] {
+                        print("apiService: got \(tickets.count) tickets from response")
+                        var results = [Ticket]()
+                        for ticketDictionary in tickets {
+                            if let ticket = Ticket(dictionary: ticketDictionary) {
+                                results.append(ticket)
+                            }
+                        }
+                        print("apiService: created \(results.count) tickets")
+                        onCompletion(results, nil)
+                    }
+                } catch {
+                    print("apiService: error parsing json")
+                    onCompletion(nil, NSError(domain: "json", code: 1000, userInfo: [NSLocalizedDescriptionKey : "Error parsing json"]))
+                }
+            } else {
+                print("apiService: error: \(String(describing: error?.localizedDescription))")
+                onCompletion(nil, error as NSError?)
             }
-         } else {
-            print("apiService: error: \(error?.localizedDescription)")
-            onCompletion(tickets: nil, error: error)
-         }
-      }
-      task.resume()
-   }
-   
+        }
+        task.resume()
+    }
+    
 }
