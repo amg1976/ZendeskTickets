@@ -55,7 +55,7 @@ class TicketsListCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update(_ cellModel: TicketsListCellViewModel) {
+    func update(withModel cellModel: TicketsListCellViewModel) {
         self.cellModel = cellModel
         
         contentView.backgroundColor = cellModel.backgroundColor

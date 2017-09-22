@@ -24,7 +24,7 @@ class TicketsListViewModel {
         self.apiService = apiService
     }
     
-    func getTickets(onCompletion completion: @escaping ((NSError?) -> Void)) {
+    func getTickets(onCompletion completion: @escaping ((Error?) -> Void)) {
         apiService.getTickets { (tickets, error) -> Void in
             if let tickets = tickets {
                 self.cellViewModels = self.convertTicketsToCellViewModel(tickets)

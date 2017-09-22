@@ -12,9 +12,9 @@ struct TicketsListCellViewModel {
     
     private var ticket: Ticket
     
-    var subject: NSAttributedString
-    var description: NSAttributedString
-    var numberAndStatus: NSAttributedString
+    let subject: NSAttributedString
+    let description: NSAttributedString
+    let numberAndStatus: NSAttributedString
     
     var backgroundColor: UIColor { return UIColor(red: 120/255, green: 163/255, blue: 0, alpha: 1) }
     var textColor: UIColor { return .white }

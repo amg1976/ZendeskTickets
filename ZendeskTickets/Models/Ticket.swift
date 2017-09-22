@@ -9,15 +9,15 @@
 import Foundation
 
 enum TicketStatus: String {
-    case New = "new", Pending = "pending", Open = "open"
+    case new, pending, open
 }
 
-class Ticket {
+struct Ticket {
     
-    var subject: String = ""
-    var description: String = ""
-    var number: Int = 0
-    var status: TicketStatus = .New
+    let subject: String
+    let description: String
+    let number: Int
+    let status: TicketStatus
     
     init?(dictionary: [AnyHashable: Any]) {
         guard let subject = dictionary["subject"] as? String,

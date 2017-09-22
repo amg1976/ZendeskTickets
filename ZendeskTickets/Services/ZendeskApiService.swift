@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias ServiceResult = (_ tickets: [Ticket]?, _ error: NSError?) -> Void
+typealias ServiceResult = (_ tickets: [Ticket]?, _ error: Error?) -> Void
 
 class ZendeskApiService {
     
@@ -49,7 +49,7 @@ class ZendeskApiService {
                 }
             } else {
                 print("apiService: error: \(String(describing: error?.localizedDescription))")
-                onCompletion(nil, error as NSError?)
+                onCompletion(nil, error)
             }
         }
         task.resume()
