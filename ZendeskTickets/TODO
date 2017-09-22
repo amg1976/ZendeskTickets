@@ -1,0 +1,4 @@
+- add empty state, for instance after network failure
+- add network state listener
+- refactor network service to be more configurable (auth details, request parameters)
+- add flow coordinators
